@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <title>firms</title>
+    <meta name="GENERATOR" content="HeidiSQL 9.5.0.5196">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+      thead tr {background-color: ActiveCaption; color: CaptionText;}
+      th, td {vertical-align: top; font-family: "Tahoma", Arial, Helvetica, sans-serif; font-size: 8pt; padding: 3px; }
+      table, td {border: 1px solid silver;}
+      table {border-collapse: collapse;}
+      thead .col0 {width: 46px;}
+      thead .col1 {width: 80px;}
+      .col1 {text-align: right;}
+      thead .col2 {width: 79px;}
+      .col2 {text-align: right;}
+    </style>
+  </head>
+
+  <body>
+
+<p style="font-family: monospace; white-space: pre;">select f.name as firm, count(d.id) as d_quantity, count(s.id) as s_quantity from firms f left join departments d on d.firm_id=f.id left join subdepartments s on s.dep_id=d.id group by f.name</p>
+
+    <table caption="firms (3 rows)">
+      <thead>
+        <tr>
+          <th class="col0">firm</th>
+          <th class="col1">d_quantity</th>
+          <th class="col2">s_quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col0">A</td>
+          <td class="col1">2</td>
+          <td class="col2">2</td>
+        </tr>
+        <tr>
+          <td class="col0">B</td>
+          <td class="col1">2</td>
+          <td class="col2">1</td>
+        </tr>
+        <tr>
+          <td class="col0">C</td>
+          <td class="col1">2</td>
+          <td class="col2">0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <em>generated 2018-12-18 12:26:15      by <a href="https://www.heidisql.com/">HeidiSQL 9.5.0.5196</a></em>
+    </p>
+
+  </body>
+</html>
